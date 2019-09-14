@@ -16,10 +16,10 @@ function fetchData(location) {
                     //console.log(data.error)
                 } else {
                     msgOne.textContent = 'For ' + data.location
-                    msgTwo.textContent = 'The temperature is ' + data.temperature + ' degrees with ' + data.precipitation + '% chance of rain.'
-                    console.log(data.location)
-                    console.log(data.temperature)
-                    console.log(data.precipitation)
+                    msgTwo.textContent = 'The temperature is ' + data.temperature + ' degrees with ' 
+                    + data.precipitation + '% chance of rain. The low temperature for the day is ' + data.temperatureLow + 
+                    ' degrees. The high temperature for the day is ' + data.temperatureHigh + ' degrees. '
+                    
                 }
                 
             }
