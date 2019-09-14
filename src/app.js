@@ -5,6 +5,9 @@ const request = require('request')
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
+// PORT for heroku deployment or 3000 for local
+const port = process.env.PORT || 3000 
+
 const app = express()
 
 // Define paths for Express config
@@ -75,24 +78,6 @@ app.get('/weather', (req,res) => {
     
 })
 
-app.get('/products', (req, res) => {   
-    if (!req.query.search) {
-        return res.send(
-            {
-                error: 'You must provide a search string!'
-            }
-        )
-    } 
-        console.log(req.query)
-        console.log(req.query.search)    
-        res.send(
-            {
-                "products": []
-            }
-        )
-    
-})
-
 app.get('*', (req,res)=>{
     console.dir(req.path)    
     res.render('404', {
@@ -101,7 +86,7 @@ app.get('*', (req,res)=>{
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 

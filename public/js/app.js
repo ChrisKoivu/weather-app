@@ -6,7 +6,7 @@ const msgOne = document.querySelector('#msg-one')
 const msgTwo = document.querySelector('#msg-two')
 
 function fetchData(location) {
-    url = 'http://localhost:3000/weather?location=' + location 
+    url = '/weather?location=' + location 
 
     fetch(url).then((response) => {        
         response.json().then(
