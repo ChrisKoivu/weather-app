@@ -6,8 +6,7 @@ const forecast = ({latitude, longitude, location}, callback) => {
    
     request(
         { url, json: true },
-        (error, {body}) => {
-            console.log(body.daily.data[0].temperatureHigh)
+        (error, {body}) => {           
             if (error) {
                 callback(('Unable to connect to Weather Service!'), undefined)
             } else if (body.error) {

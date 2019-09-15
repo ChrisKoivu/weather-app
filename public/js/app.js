@@ -12,8 +12,7 @@ function fetchData(location) {
         response.json().then(
             (data) => {
                 if(data.error) {
-                    msgOne.textContent = data.error
-                    //console.log(data.error)
+                    msgOne.textContent = data.error                   
                 } else {
                     msgOne.textContent = 'For ' + data.location
                     msgTwo.textContent = 'The temperature is ' + data.temperature + ' degrees with ' 
